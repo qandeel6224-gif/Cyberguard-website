@@ -36,7 +36,7 @@
         </div>
         <div>
           <h1 class="text-xl md:text-2xl font-extrabold tracking-widest uppercase">
-            <span class="bg-gradient-to-r from-cyan-400 via-sky-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <span class="bg-gradient-to-r from-cyan-400 via-sky-400 to-fuchsia-400 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(56,189,248,0.3)]">
               <i class="fa-solid fa-shield mr-2"></i>CyberGuard
             </span>
           </h1>
@@ -73,27 +73,61 @@
     <div class="max-w-6xl mx-auto px-4 py-8 space-y-8">
 
 ```
-  <!-- HOME -->
+  <!-- ================= HOME ================= -->
   <section id="view-home" class="view-section">
-    <!-- (rest of your original content stays unchanged) -->
-    <h2 class="text-lg font-semibold">Your original content here (unchanged)</h2>
+
+    <div class="grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 items-start">
+
+      <!-- LEFT PANEL -->
+      <div class="glass-panel rounded-2xl p-6 border border-slate-700/60">
+
+        <h2 class="text-lg font-semibold mb-4">
+          <i class="fa-solid fa-lock text-cyan-400"></i>
+          Real-Time Password Scanner
+        </h2>
+
+        <input id="passwordInput" type="password"
+          class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 mb-4"
+          placeholder="Type password to analyze...">
+
+        <div class="mb-4">
+          <div id="strengthBar" class="h-3 w-0 bg-green-500 rounded-full"></div>
+          <p id="strengthLabel" class="text-sm mt-2">Waiting...</p>
+        </div>
+
+        <p class="text-sm">Crack Time: <span id="crackTime">—</span></p>
+        <p class="text-sm">Search Space: <span id="searchSpace">—</span></p>
+
+        <ul id="suggestionList" class="mt-4 text-sm"></ul>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="glass-panel rounded-2xl p-6 border border-slate-700">
+        <h2 class="text-lg font-semibold mb-3">
+          <i class="fa-solid fa-shield text-cyan-400"></i>
+          CyberGuard Insights
+        </h2>
+        <p class="text-sm">Analyze password strength and improve your security.</p>
+      </div>
+
+    </div>
   </section>
 
   <!-- REVIEWS -->
   <section id="view-reviews" class="view-section hidden">
-    <textarea id="reviewInput"></textarea>
+    <textarea id="reviewInput" class="w-full mb-3"></textarea>
     <button id="submitReview">Submit Review</button>
     <ul id="reviewList"></ul>
   </section>
 
   <!-- ABOUT -->
   <section id="view-about" class="view-section hidden">
-    <p>About CyberGuard...</p>
+    <p>CyberGuard helps you understand password security.</p>
   </section>
 
   <!-- FAQ -->
   <section id="view-faq" class="view-section hidden">
-    <input id="faqInput">
+    <input id="faqInput" class="mb-3">
     <button id="submitFaq">Submit Question</button>
     <div id="faqList"></div>
   </section>
